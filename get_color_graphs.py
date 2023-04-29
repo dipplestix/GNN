@@ -3,7 +3,7 @@ import requests
 import tarfile
 
 
-# Adapted from https://github.com/amazon-science/gcp-with-gnns-example/blob/main/gc_example.ipynb
+# Adapted from https://github.com/amazon-science/gcp-with-gnns-example/blob/main/gc_example.ipynb with chatGPT
 def download_file(url, output_directory):
     response = requests.get(url, stream=True)
 
