@@ -42,4 +42,4 @@ def col_to_edge_list(filename):
     n = max(max(e) for e in edges)
     edge_index = build_edge_list(edges)
     color_list = build_color_list(n, node_colors)
-    return edge_index, color_list
+    return n, edge_index, color_list
