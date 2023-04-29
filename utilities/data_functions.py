@@ -11,7 +11,7 @@ def read_col_file(filename):
             if parts[0] == 'e':
                 n1, n2 = int(parts[1]), int(parts[2])
                 edges.append((n1, n2))
-                edges.append((n2, n1))
+                # edges.append((n2, n1))
             elif parts[0] == 'f':
                 n = int(parts[1])
                 colors = [int(c) for c in parts[2:]]
