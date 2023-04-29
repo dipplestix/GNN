@@ -22,6 +22,7 @@ def self_info_loss(col_probs):
     loss = torch.trace(torch.mm(col_probs, log_probs.T))
     return loss
 
+
 def wang_loss_function(col_probs, edge_list, lam):
     # Loss function from Wang's 2023 paper: A Graph Neural Network with Negative Message Passing for Graph Coloring
     loss = dot_product_loss(col_probs, edge_list) + lam*self_info_loss(col_probs)
