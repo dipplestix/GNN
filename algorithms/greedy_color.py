@@ -1,8 +1,11 @@
 from torch_geometric.utils import to_dense_adj
 import random
+import torch
 
 
-def greedy_color(n, edge_list, shuffle=True):
+def greedy_color(edge_list, shuffle=True):
+    # Implemented based on section 3.1 of "Guide to Graph Colouring" - R.M.R. Lewis
+    n = torch.max(edge_list) + 1
     colors = [None]*n
     color_map = {0:[]}
     nodes = list(range(n))
