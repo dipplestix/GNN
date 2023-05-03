@@ -12,9 +12,9 @@ def count_collisions(coloring, edge_index):
 
 
 def dot_product_loss(col_probs, edge_list):
-    adj = to_dense_adj(edge_list)
+    adj = to_dense_adj(edge_list).squeeze(0)
     loss = torch.sum(torch.mm(col_probs, col_probs.T) * adj)/2
-    return loss
+    return loss/2
 
 
 def self_info_loss(col_probs):

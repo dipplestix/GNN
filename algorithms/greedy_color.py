@@ -8,13 +8,12 @@ def greedy_color(edge_list, shuffle=True):
     colors = [None]*n
     color_map = {0: set()}
     nodes = list(range(n))
+    if shuffle:
+        random.shuffle(nodes)
 
     neighbors = [set() for _ in range(n)]
     for u, v in edge_list.t():
         neighbors[u.item()].add(v.item())
-
-    if shuffle:
-        random.shuffle(nodes)
 
     latest_color = 0
     for node in nodes:

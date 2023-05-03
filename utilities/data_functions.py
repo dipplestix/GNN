@@ -3,20 +3,23 @@ import torch
 
 # We used chatGPT to generate this by giving it an example .col file and the desired output
 def read_col_file(filename):
-    edges = []
+    edges = set()
     node_colors = {}
     with open(filename) as f:
         for line in f:
             parts = line.split()
             if parts[0] == 'e':
                 n1, n2 = int(parts[1]), int(parts[2])
-                edges.append((n1, n2))
-                # edges.append((n2, n1))
+                edge = (n1, n2)
+                symmetric_edge = (n2, n1)
+                if edge not in edges and symmetric_edge not in edges:
+                    edges.add(edge)
+                    edges.add(symmetric_edge)
             elif parts[0] == 'f':
                 n = int(parts[1])
                 colors = [int(c) for c in parts[2:]]
                 node_colors[n] = colors
-    return edges, node_colors
+    return list(edges), node_colors
 
 
 def build_edge_list(edges):
