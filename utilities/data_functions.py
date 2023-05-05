@@ -46,3 +46,22 @@ def col_to_edge_list(filename):
     edge_index = build_edge_list(edges)
     color_list = build_color_list(n, node_colors)
     return n, edge_index, color_list
+
+
+chromatic_numbers = {
+    'jean.col': 10,
+    'anna.col': 11,
+    'huck.col': 11,
+    'david.col': 11,
+    'homer.col': 13,
+    'myciel5.col': 6,
+    'myciel6.col': 7,
+    'queen5_5.col': 5,
+    'queen6_6.col': 7,
+    'queen7_7.col': 7,
+    'queen8_8.col': 9,
+    'queen9_9.col': 10,
+    'queen8_12.col': 12,
+    'queen11_11.col': 11,
+    'queen13_13.col': 13,
+}
